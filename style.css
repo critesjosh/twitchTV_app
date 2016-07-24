@@ -31,6 +31,14 @@ button {
   margin-left: 10px;
 }
 
+.status {
+  float:right;
+}
+
+.watch{
+margin-left: 50px;
+}
+
 #filter{
   float: right;
 }

@@ -14,7 +14,7 @@ var getUserInfo = function(){
       profilePic = data.logo;
       if (data.error) {
         $('.container-fluid').append('<div class="row"><div class="offline info ' + user + ' col-sm-8 col-sm-offset-2"><img src=' + profilePic + '><p>' + user + '</p></div></div>');
-        $('.' + user).append('<p>A user with that name does not exist.</p>');
+        $('.' + user).append('<p class="status">A user with that name does not exist.</p>');
       } else {
         $('.container-fluid').append('<div class="row"><div class="info ' + user + ' col-sm-8 col-sm-offset-2"><img src=' + profilePic + '><p>' + displayName + '</p></div></div>');
         $.ajax( "https://api.twitch.tv/kraken/streams/" + user, {
@@ -24,11 +24,11 @@ var getUserInfo = function(){
           if (data.stream) {
             streamURL = data.stream.channel.url;
             var channel = data.stream.game;
-            $('.' + user).append('<p col-sm-2 >Online</p>');
-            $('.' + user).append('<a href=' + streamURL + '>Watch '+ channel + '</a>');
+            $('.' + user).append('<p class="status">Online</p>');
+            $('.' + user).append('<a class="watch" href=' + streamURL + '>Watch '+ channel + '</a>');
           } else {
             $('.' + user).toggleClass('offline');
-            $('.' + user).append('<p>Offline</p>');
+            $('.' + user).append('<p class="status">Offline</p>');
           }
         });
       }
