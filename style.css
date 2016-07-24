@@ -1,0 +1,36 @@
+body {
+  background-color: lightYellow;
+}
+
+.header{
+  background-color: lightBlue;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+p {
+  display: inline;
+}
+
+.info{
+  background-color: lightGreen;
+  margin-top: 10px;
+}
+
+.offline{
+  background-color: #E97451;
+  font-style: italic;
+}
+
+button {
+  border-color: black;
+  float: right;
+  margin-left: 10px;
+}
+
+#filter{
+  float: right;
+}
